@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blackjack</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Blackjack</h1>
+    <h1>{{ msg }}</h1>
+
+    <div class="col-md-2 col-sm-2 col-xs-3"> 
+        <form action="/game" method="post">
+            <input id="new" type="submit" value="New game">
+        </form>
+        <form action="/hit" method="post">
+            <input type="submit" value="Hit">
+        </form>
+        <form action="/stand" method="post">
+            <input id="stand" type="submit" value="Stand">
+        </form>
+    </div>
+    <div class="col-md-10 col-sm-10 col-xs-9">
+        <p>
+            Dealer card: {{ dealer|join(', ') }} <br />
+            Your card: {{ player|join(', ') }}
+        </p>
+        <p>
+            Dealer has: {{ val2 }} <br />
+            Your have: {{ val1 }}
+        </p>
+    </div>
+    &#9824; - Spades (S)<br /> 
+    &#9827; - Clubs (C)<br />
+    &#9829; - Hearts (H)<br />
+    &#9830; - Diamonds (D)
+</div>
+
+</body>
+</html>
